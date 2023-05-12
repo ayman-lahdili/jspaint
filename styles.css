@@ -1,26 +1,30 @@
 :root {
     --grid-rows: 1;
   --grid-cols: 1;
-  --container-dim: 960px;
+  --grid-dim: 960px;
 }
 
-#container {
+body {
+  text-align: center;
+}
+
+button {
+  font-size: 20px;
+}
+
+#grid {
   display: grid;
   grid-gap: 0px;
-  width: var(--container-dim);
-  height: var(--container-dim);
+  width: var(--grid-dim);
+  height: var(--grid-dim);
   grid-template-rows: repeat(var(--grid-rows), 1fr);
   grid-template-columns: repeat(var(--grid-cols), 1fr);
 }
 
 .grid-item {
   /* padding: 1em; */
-  height: calc(var(--grid-rows/--container-dim) * 1px);
-  width: calc(var(--grid-cols/--container-dim) * 1px);;
+  height: calc(var(--grid-rows/--grid-dim) * 1px);
+  width: calc(var(--grid-cols/--grid-dim) * 1px);;
   border: 1px solid #ddd;
   text-align: center;
-}
-
-.grid-item:hover {
-    background-color: black;
 }

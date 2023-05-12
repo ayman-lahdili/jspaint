@@ -1,18 +1,18 @@
-const container = document.getElementById("container");
+const grid = document.getElementById("grid");
 
 function generateGrid(dimension) {
-    container.style.setProperty('--grid-rows', dimension);
-    container.style.setProperty('--grid-cols', dimension);
+    grid.style.setProperty('--grid-rows', dimension);
+    grid.style.setProperty('--grid-cols', dimension);
 
     for (i = 0; i <dimension; i++) {
         for (j = 0; j<dimension; j++) {
             let cell = document.createElement("div");
 
             cell.className = "grid-item";
-            container.appendChild(cell).id  = `${i}-${j}`;
+            grid.appendChild(cell).id  = `${i}-${j}`;
 
-            cell.addEventListener("click", () => {
-                cell.style.cssText = "background-color: black;"
+            cell.addEventListener("mouseover", () => {
+                cell.style.cssText = `background-color: rgba(${Math.random()*255}, ${Math.random()*255}, ${Math.random()*255}, ${Math.random()});`
             })
         }
     }
