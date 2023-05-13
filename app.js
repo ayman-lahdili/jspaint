@@ -1,6 +1,9 @@
 const grid = document.getElementById("grid");
+const changeDimBtn = document.getElementById("changeDimBtn");
 
 function generateGrid(dimension) {
+    grid.innerText = "";
+
     grid.style.setProperty('--grid-rows', dimension);
     grid.style.setProperty('--grid-cols', dimension);
 
@@ -18,4 +21,14 @@ function generateGrid(dimension) {
     }
 };
 
-generateGrid(24);
+generateGrid(16);
+
+changeDimBtn.addEventListener("click", () => {
+    let dimension = parseInt(prompt("Please enter the number of squares per side for the new grid"));
+
+    if (dimension>64) {
+        alert("Must be under 64 squares per side");
+    } else {
+        generateGrid(dimension);
+    }
+})
