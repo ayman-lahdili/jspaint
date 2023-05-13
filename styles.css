@@ -2,6 +2,9 @@
     --grid-rows: 1;
   --grid-cols: 1;
   --grid-dim: 80vw;
+  --border-color: #ddd;
+  --font-size: 2em;
+  --font-family: Sans-serif;
 }
 
 body {
@@ -11,8 +14,27 @@ body {
   align-items: center;
 }
 
+.button-container {
+  display: flex;
+  width: var(--grid-dim);
+  justify-content: space-between;
+  margin: 10px;
+  padding: 10px;
+}
+
 button {
-  font-size: 3vh;
+  font-size: var(--font-size);
+}
+
+.dimDisplay {
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+}
+
+.grid-container {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid var(--border-color);
 }
 
 #grid {
@@ -27,6 +49,6 @@ button {
 .grid-item {
   height: calc(var(--grid-rows/--grid-dim) * 1px);
   width: calc(var(--grid-cols/--grid-dim) * 1px);;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   transition: background-color 1000ms;
 }

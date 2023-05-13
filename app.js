@@ -1,5 +1,6 @@
 const grid = document.getElementById("grid");
 const changeDimBtn = document.getElementById("changeDimBtn");
+const dimDisplay = document.querySelector(".dimDisplay");
 
 function generateGrid(dimension) {
     grid.innerText = "";
@@ -19,9 +20,11 @@ function generateGrid(dimension) {
             })
         }
     }
+
+    dimDisplay.innerText = `${dimension} x ${dimension}`;
 };
 
-generateGrid(16);
+generateGrid(16); // Default
 
 changeDimBtn.addEventListener("click", () => {
     let dimension = parseInt(prompt("Please enter the number of squares per side for the new grid"));
